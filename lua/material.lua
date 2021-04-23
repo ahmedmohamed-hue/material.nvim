@@ -529,7 +529,7 @@ Group.new('jsClassBlock', c.blue, c.none, no)
 Group.new('jsFutureKeys', c.orange, c.none, b)
 Group.new('jsFuncArgs', c.blue, c.none, no)
 Group.new('jsStorageClass', c.blue, c.none, no)
-Group.new('jsxRegion', c.blue, c.none, no)
+Group.new('jsxRegion', c.orange, c.none, no)
 -- JSON
 Group.new('jsonKeyword', c.green, c.none, no)
 Group.new('jsonQuote', c.green, c.none, no)
