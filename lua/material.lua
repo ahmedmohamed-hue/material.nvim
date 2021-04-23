@@ -114,11 +114,10 @@ elseif v.material_style == 'palenight' then
 
 elseif v.material_style == 'oceanic' then
     -- Oceanic theme style
-    --
     Color.new('Bg', '#161925')
     Color.new('Fg1', '#EEFFFF')
     Color.new('invisibles', '#80869E')
-    Color.new('text', '#EEFFFF')
+    Color.new('text', '#DCDFE4')
     Color.new('comments', '#464B5D')
     Color.new('selection', '#272D48')
     Color.new('line_numbers', '#3B3F51')
