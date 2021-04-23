@@ -118,7 +118,7 @@ elseif v.material_style == 'oceanic' then
     Color.new('Bg', '#161925')
     Color.new('Fg1', '#EEFFFF')
     Color.new('invisibles', '#80869E')
-    Color.new('text', '#676E95')
+    Color.new('text', '#EEFFFF')
     Color.new('comments', '#464B5D')
     Color.new('selection', '#272D48')
     Color.new('line_numbers', '#3B3F51')
