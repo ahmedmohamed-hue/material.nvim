@@ -14,7 +14,6 @@
 -- Description:             Colorscheme for NeoVim based on the material pallete
 -- Author:                  Marko Cerovac <marko.cerovac16@gmail.com>
 -- Website:                 https://github.com/marko-cerovac/material.nvim
-
 local Color, colors, Group, groups, styles = require('colorbuddy').setup()
 local g = require('colorbuddy.group').groups
 local c = require('colorbuddy.color').colors
@@ -29,130 +28,128 @@ local v = vim.g
 
 -- Clear highlights and reset syntax
 vim.api.nvim_command([[highlight clear]])
-if vim.fn.exists('syntax_on') then
-    vim.api.nvim_command('syntax reset')
-end
+if vim.fn.exists('syntax_on') then vim.api.nvim_command('syntax reset') end
 
 v.colors_name = 'material'
 
 -- Universal colors
 
-Color.new('Fg2',			'#607D8B')
-Color.new('Fg3',			'#8F93A2')
-Color.new('disabled',       '#464B5D')
+Color.new('Fg2', '#607D8B')
+Color.new('Fg3', '#8F93A2')
+Color.new('disabled', '#464B5D')
 
-Color.new('white',          '#EEFFFF')
-Color.new('gray',           '#717CB4')
-Color.new('black',          '#000000')
-Color.new('red',            '#F07178')
-Color.new('green',          '#C3E88D')
---Color.new('lime',           '#98EE64')
-Color.new('yellow',         '#FFCB6B')
-Color.new('blue',           '#82AAFF')
-Color.new('paleblue',       '#B0C9FF')
-Color.new('cyan',           '#89DDFF')
-Color.new('purple',         '#C792EA')
---Color.new('violet',         '#B66FFD')
-Color.new('orange',         '#F78C6C')
-Color.new('pink',           '#FF9CAC')
+Color.new('white', '#EEFFFF')
+Color.new('gray', '#717CB4')
+Color.new('black', '#000000')
+Color.new('red', '#F07178')
+Color.new('green', '#C3E88D')
+-- Color.new('lime',           '#98EE64')
+Color.new('yellow', '#FFCB6B')
+Color.new('blue', '#82AAFF')
+Color.new('paleblue', '#B0C9FF')
+Color.new('cyan', '#89DDFF')
+Color.new('purple', '#C792EA')
+-- Color.new('violet',         '#B66FFD')
+Color.new('orange', '#F78C6C')
+Color.new('pink', '#FF9CAC')
 
-Color.new('error',          '#FF5370')
-Color.new('warning',        '#FFD353')
-Color.new('link',           '#80CBC4')
-
+Color.new('error', '#FF5370')
+Color.new('warning', '#FFD353')
+Color.new('link', '#80CBC4')
 
 -- Style specific colors
 
 if v.material_style == 'darker' then
-	-- Darker theme style
+    -- Darker theme style
 
-	Color.new('Bg',					'#212121')
-	Color.new('Fg1',				'#B0BEC5')
-	Color.new('invisibles',			'#65737E')
-	Color.new('text',			    '#727272')
-	Color.new('comments',			'#545454')
-	Color.new('selection',			'#2C2C2C')
-	Color.new('line_numbers',		'#424242')
-	Color.new('line_highlight',		'#171717')
-	Color.new('accent',				'#FF9800')
+    Color.new('Bg', '#212121')
+    Color.new('Fg1', '#B0BEC5')
+    Color.new('invisibles', '#65737E')
+    Color.new('text', '#727272')
+    Color.new('comments', '#545454')
+    Color.new('selection', '#2C2C2C')
+    Color.new('line_numbers', '#424242')
+    Color.new('line_highlight', '#171717')
+    Color.new('accent', '#FF9800')
 
 elseif v.material_style == 'lighter' then
-	-- Lighter theme style
+    -- Lighter theme style
 
-	Color.new('Bg',					'#FAFAFA')
-	Color.new('Fg1',				'#546E7A')
-	Color.new('invisibles',			'#E7EAEC')
-	Color.new('text',			    '#94A7B0')
-	Color.new('comments',			'#90A4AE')
-	Color.new('caret',				'#272727')
-	Color.new('selection',			'#EBF4F3')
-	Color.new('line_numbers',		'#CFD8DC')
-	Color.new('line_highlight',		'#ECF0F1')
-	Color.new('disabled',		    '#d2d4d5')
-	Color.new('white',				'#FFFFFF')
-	Color.new('red',				'#E53935')
-	Color.new('orange',				'#F76D47')
-	Color.new('yellow',				'#F6A434')
-	Color.new('green',				'#91B859')
-	Color.new('cyan',				'#39ADB5')
-	Color.new('blue',				'#6182B8')
-	Color.new('purple',				'#7C4DFF')
-	Color.new('pink',				'#FF5370')
-	Color.new('paleblue',			'#8796B0')
-	Color.new('accent',				'#00BCD4')
-	--Color.new('violet',             '#945EB8')
-	--Color.new('brown',              '#C17E70')
+    Color.new('Bg', '#FAFAFA')
+    Color.new('Fg1', '#546E7A')
+    Color.new('invisibles', '#E7EAEC')
+    Color.new('text', '#94A7B0')
+    Color.new('comments', '#90A4AE')
+    Color.new('caret', '#272727')
+    Color.new('selection', '#EBF4F3')
+    Color.new('line_numbers', '#CFD8DC')
+    Color.new('line_highlight', '#ECF0F1')
+    Color.new('disabled', '#d2d4d5')
+    Color.new('white', '#FFFFFF')
+    Color.new('red', '#E53935')
+    Color.new('orange', '#F76D47')
+    Color.new('yellow', '#F6A434')
+    Color.new('green', '#91B859')
+    Color.new('cyan', '#39ADB5')
+    Color.new('blue', '#6182B8')
+    Color.new('purple', '#7C4DFF')
+    Color.new('pink', '#FF5370')
+    Color.new('paleblue', '#8796B0')
+    Color.new('accent', '#00BCD4')
+    -- Color.new('violet',             '#945EB8')
+    -- Color.new('brown',              '#C17E70')
 
 elseif v.material_style == 'palenight' then
-	-- Palenight theme style
+    -- Palenight theme style
 
-	Color.new('Bg',					'#292D3E')
-	Color.new('Fg1',				'#A6ACCD')
-	Color.new('invisibles',			'#4E5579')
-	Color.new('text',			    '#676E95')
-	Color.new('comments',			'#676E95')
-	Color.new('selection',			'#343B51')
-	Color.new('line_numbers',		'#3A3F58')
-	Color.new('line_highlight', 	'#1C1F2B')
-	Color.new('accent',				'#ab47bc')
+    Color.new('Bg', '#292D3E')
+    Color.new('Fg1', '#A6ACCD')
+    Color.new('invisibles', '#4E5579')
+    Color.new('text', '#676E95')
+    Color.new('comments', '#676E95')
+    Color.new('selection', '#343B51')
+    Color.new('line_numbers', '#3A3F58')
+    Color.new('line_highlight', '#1C1F2B')
+    Color.new('accent', '#ab47bc')
 
 elseif v.material_style == 'oceanic' then
-	-- Oceanic theme style
-	--
-	Color.new('Bg',					'#0F2330')
-	Color.new('Fg1',				'#EEFFFF')
-	Color.new('invisibles',			'#80869E')
-	Color.new('text',			    '#676E95')
-	Color.new('comments',			'#464B5D')
-	Color.new('selection',			'#272D48')
-	Color.new('line_numbers',		'#3B3F51')
-	Color.new('line_highlight',		'#0A0C12')
-	Color.new('accent',				'#69FFDE')
+    -- Oceanic theme style
+    --
+    Color.new('Bg', '#161925')
+    Color.new('Fg1', '#EEFFFF')
+    Color.new('invisibles', '#80869E')
+    Color.new('text', '#676E95')
+    Color.new('comments', '#464B5D')
+    Color.new('selection', '#272D48')
+    Color.new('line_numbers', '#3B3F51')
+    Color.new('line_highlight', '#0A0C12')
+    Color.new('accent', '#69FFDE')
 
 elseif v.material_style == 'deep ocean' then
-	-- Deep ocean theme style
+    -- Deep ocean theme style
 
-	Color.new('Bg',					'#0F111A')
-	Color.new('Fg1',				'#8F93A2')
-	Color.new('invisibles',			'#80869E')
-	Color.new('text',			    '#4B526D')
-	Color.new('comments',			'#464B5D')
-	Color.new('selection',			'#1F2233')
-	Color.new('line_numbers',		'#3B3F51')
-	Color.new('line_highlight',		'#0A0C12')
-	Color.new('accent',				'#84FFFF')
+    Color.new('Bg', '#0F111A')
+    Color.new('Fg1', '#8F93A2')
+    Color.new('invisibles', '#80869E')
+    Color.new('text', '#4B526D')
+    Color.new('comments', '#464B5D')
+    Color.new('selection', '#1F2233')
+    Color.new('line_numbers', '#3B3F51')
+    Color.new('line_highlight', '#0A0C12')
+    Color.new('accent', '#84FFFF')
 
-else v.material_style = 'default'
-	-- Default theme style
-	Color.new('Bg',					'#263238')
-	Color.new('Fg1',				'#B0BEC5')
-	Color.new('invisibles',			'#80869E')
-	Color.new('text',			    '#607D8B')
-	Color.new('comments',			'#464B5D')
-	Color.new('selection',			'#1F2233')
-	Color.new('line_numbers',		'#3B3F51')
-	Color.new('line_highlight',		'#0A0C12')
-	Color.new('accent',				'#009688')
+else
+    v.material_style = 'default'
+    -- Default theme style
+    Color.new('Bg', '#263238')
+    Color.new('Fg1', '#B0BEC5')
+    Color.new('invisibles', '#80869E')
+    Color.new('text', '#607D8B')
+    Color.new('comments', '#464B5D')
+    Color.new('selection', '#1F2233')
+    Color.new('line_numbers', '#3B3F51')
+    Color.new('line_highlight', '#0A0C12')
+    Color.new('accent', '#009688')
 
 end
 
@@ -174,7 +171,6 @@ v.terminal_color_12 = '#82AAFF'
 v.terminal_color_13 = '#C792EA'
 v.terminal_color_14 = '#89DDFF'
 v.terminal_color_15 = '#EEFFFF'
-
 
 -- Syntax groups
 
@@ -231,7 +227,6 @@ Group.new('Underlined', c.link, c.none, ul) -- text that stands out, HTML links
 Group.new('Ignore', c.disabled, c.none, no) -- left blank, hidden
 Group.new('Error', c.error, c.none, b + ul) -- any erroneous construct
 Group.new('Todo', c.yellow, c.none, b + i) -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-
 
 -- Highlight groups
 
@@ -299,7 +294,6 @@ Group.new('VisualMode', c.purple, c.none, r)
 Group.new('CommandMode', c.gray, c.none, r)
 Group.new('Warnings', c.warning, c.none, r)
 
-
 -- Language-specific highlighting
 
 -- C
@@ -325,7 +319,7 @@ Group.new('clojureRegexp', c.cyan, c.none, no)
 Group.new('clojureRegexpEscape', c.cyan, c.none, no)
 Group.new('clojureRegexpCharClass', c.Fg3, c.none, b)
 Group.new('clojureRegexpMod', c.Fg3, c.none, b)
-Group.new('clojureRegexpQuantifier',  c.Fg3, c.none, b)
+Group.new('clojureRegexpQuantifier', c.Fg3, c.none, b)
 Group.new('clojureParen', c.Fg3, c.none, no)
 Group.new('clojureAnonArg', c.yellow, c.none, no)
 Group.new('clojureVariable', c.blue, c.none, no)
@@ -557,7 +551,8 @@ Group.new('markdownCode', c.purple, c.none, no)
 Group.new('mkdCode', g.markdownCode, g.markdownCode, g.markdownCode)
 Group.new('markdownCodeBlock', c.cyan, c.none, no)
 Group.new('markdownCodeDelimiter', c.orange, c.none, no)
-Group.new('mkdCodeDelimiter', g.markdownCodeDelimiter, g.markdownCodeDelimiter, g.markdownCodeDelimiter)
+Group.new('mkdCodeDelimiter', g.markdownCodeDelimiter, g.markdownCodeDelimiter,
+          g.markdownCodeDelimiter)
 Group.new('markdownBlockquote', c.gray, c.none, no)
 Group.new('markdownListMarker', c.gray, c.none, no)
 Group.new('markdownOrderedListMarker', c.gray, c.none, no)
@@ -570,7 +565,8 @@ Group.new('markdownHeadingDelimiter', c.orange, c.none, no)
 Group.new('markdownUrl', c.link, c.none, no)
 Group.new('markdownUrlTitleDelimiter', c.green, c.none, no)
 Group.new('markdownLinkText', c.link, c.none, ul)
-Group.new('markdownIdDeclaration', g.markdownLinkText, g.markdownLinkText, g.markdownLinkText)
+Group.new('markdownIdDeclaration', g.markdownLinkText, g.markdownLinkText,
+          g.markdownLinkText)
 -- MoonScript
 Group.new('moonSpecialOp', c.Fg3, c.none, no)
 Group.new('moonExtendedOp', c.Fg3, c.none, no)
@@ -667,7 +663,6 @@ Group.new('vimSetSep', c.Fg3, c.none, no)
 Group.new('vimSep', c.Fg3, c.none, no)
 Group.new('vimContinue', c.yellow, c.none, no)
 
-
 -- Plugin highlight
 
 -- Git Commit (tpope/vim-git)
@@ -700,30 +695,30 @@ Group.new('NvimTreeExecFile', c.green, c.none, no)
 Group.new('NvimTreeImageFile', c.yellow, c.none, no)
 Group.new('NvimTreeEmptyFolderName', c.text, c.none, no)
 Group.new('NvimTreeIndentMarker', c.Fg2, c.none, no)
---Group.new('NvimTreeMarkdownFile', c.blue, c.none, no)
---Group.new('NvimTreeSpecialFile', c.red, c.none, no)
---Group.new('NvimTreeRootFolder', c.blue, c.none, no)
---Group.new('NvimTreeLicenseIcon', c.blue, c.none, no)
---Group.new('NvimTreeYamlIcon', c.blue, c.none, no)
---Group.new('NvimTreeTomlIcon', c.blue, c.none, no)
---Group.new('NvimTreeGitignoreIcon', c.blue, c.none, no)
---Group.new('NvimTreeJsonIcon', c.blue, c.none, no)
---Group.new('NvimTreeLuaIcon', c.blue, c.none, no)
---Group.new('NvimTreePythonIcon', c.blue, c.none, no)
---Group.new('NvimTreeShellIcon', c.blue, c.none, no)
---Group.new('NvimTreeJavascriptIcon', c.blue, c.none, no)
---Group.new('NvimTreeCIcon', c.blue, c.none, no)
---Group.new('NvimTreeReactIcon', c.blue, c.none, no)
---Group.new('NvimTreeHtmlIcon', c.blue, c.none, no)
---Group.new('NvimTreeRustIcon', c.blue, c.none, no)
---Group.new('NvimTreeVimIcon', c.blue, c.none, no)
---Group.new('NvimTreeTypescriptIcon', c.blue, c.none, no)
---Group.new('NvimTreeGitDirty', c.blue, c.none, no)
---Group.new('NvimTreeGitStaged', c.blue, c.none, no)
---Group.new('NvimTreeGitMerge', c.blue, c.none, no)
---Group.new('NvimTreeGitRenamed', c.blue, c.none, no)
---Group.new('NvimTreeGitNew', c.blue, c.none, no)
---Group.new('NvimTreeSymlink', c.blue, c.none, no)
+-- Group.new('NvimTreeMarkdownFile', c.blue, c.none, no)
+-- Group.new('NvimTreeSpecialFile', c.red, c.none, no)
+-- Group.new('NvimTreeRootFolder', c.blue, c.none, no)
+-- Group.new('NvimTreeLicenseIcon', c.blue, c.none, no)
+-- Group.new('NvimTreeYamlIcon', c.blue, c.none, no)
+-- Group.new('NvimTreeTomlIcon', c.blue, c.none, no)
+-- Group.new('NvimTreeGitignoreIcon', c.blue, c.none, no)
+-- Group.new('NvimTreeJsonIcon', c.blue, c.none, no)
+-- Group.new('NvimTreeLuaIcon', c.blue, c.none, no)
+-- Group.new('NvimTreePythonIcon', c.blue, c.none, no)
+-- Group.new('NvimTreeShellIcon', c.blue, c.none, no)
+-- Group.new('NvimTreeJavascriptIcon', c.blue, c.none, no)
+-- Group.new('NvimTreeCIcon', c.blue, c.none, no)
+-- Group.new('NvimTreeReactIcon', c.blue, c.none, no)
+-- Group.new('NvimTreeHtmlIcon', c.blue, c.none, no)
+-- Group.new('NvimTreeRustIcon', c.blue, c.none, no)
+-- Group.new('NvimTreeVimIcon', c.blue, c.none, no)
+-- Group.new('NvimTreeTypescriptIcon', c.blue, c.none, no)
+-- Group.new('NvimTreeGitDirty', c.blue, c.none, no)
+-- Group.new('NvimTreeGitStaged', c.blue, c.none, no)
+-- Group.new('NvimTreeGitMerge', c.blue, c.none, no)
+-- Group.new('NvimTreeGitRenamed', c.blue, c.none, no)
+-- Group.new('NvimTreeGitNew', c.blue, c.none, no)
+-- Group.new('NvimTreeSymlink', c.blue, c.none, no)
 -- NerdTree (preservim/nerdtree)
 Group.new('NERDTreeDir', c.blue, c.none, b)
 Group.new('NERDTreeDirSlash', c.Fg1, c.none, no)
@@ -775,32 +770,32 @@ Group.new("LspSagaCodeActionTitle	", c.purple, c.none)
 Group.new("LspSagaCodeActionContent	", c.green, c.none)
 Group.new("LspSagaCodeActionBorder	", c.purple, c.none)
 Group.new("LspSagaSignatureHelpBorder", c.green, c.none)
---Group.new("LspSagaFinderSelection", c.none, c.none)
---Group.new("LspSagaBorderTitle	", c.none, c.none)
---Group.new("TargetWord	", c.none, c.none)
---Group.new("ReferencesCount	", c.none, c.none)
---Group.new("DefinitionCount	", c.none, c.none)
---Group.new("TargetFileName	", c.none, c.none)
---Group.new("DefinitionIcon	", c.none, c.none)
---Group.new("ReferencesIcon	", c.none, c.none)
---Group.new("ProviderTruncateLine	", c.none, c.none)
---Group.new("SagaShadow	", c.none, c.none)
---Group.new("LspSagaFinderSelection	", c.none, c.none)
---Group.new("DiagnosticTruncateLine	", c.none, c.none)
---Group.new("LspSagaShTruncateLine	", c.none, c.none)
---Group.new("LspSagaDocTruncateLine	", c.none, c.none)
---Group.new("LineDiagTuncateLine	", c.none, c.none)
---Group.new("LspSagaCodeActionTruncateLine	", c.none, c.none)
---Group.new("LspSagaAutoPreview	", c.none, c.none)
---Group.new("LspLinesDiagBorder", c.none, c.none)
+-- Group.new("LspSagaFinderSelection", c.none, c.none)
+-- Group.new("LspSagaBorderTitle	", c.none, c.none)
+-- Group.new("TargetWord	", c.none, c.none)
+-- Group.new("ReferencesCount	", c.none, c.none)
+-- Group.new("DefinitionCount	", c.none, c.none)
+-- Group.new("TargetFileName	", c.none, c.none)
+-- Group.new("DefinitionIcon	", c.none, c.none)
+-- Group.new("ReferencesIcon	", c.none, c.none)
+-- Group.new("ProviderTruncateLine	", c.none, c.none)
+-- Group.new("SagaShadow	", c.none, c.none)
+-- Group.new("LspSagaFinderSelection	", c.none, c.none)
+-- Group.new("DiagnosticTruncateLine	", c.none, c.none)
+-- Group.new("LspSagaShTruncateLine	", c.none, c.none)
+-- Group.new("LspSagaDocTruncateLine	", c.none, c.none)
+-- Group.new("LineDiagTuncateLine	", c.none, c.none)
+-- Group.new("LspSagaCodeActionTruncateLine	", c.none, c.none)
+-- Group.new("LspSagaAutoPreview	", c.none, c.none)
+-- Group.new("LspLinesDiagBorder", c.none, c.none)
 
 -- NeoVim built in
 
 -- +- Neovim Support -+
- Group.new("healthError",c.error, c.Fg2)
- Group.new("healthSuccess",c.green, c.Bg)
- Group.new("healthWarning",c.warning, c.Bg)
- Group.new("TermCursorNC",c.Fg1, c.Bg)
+Group.new("healthError", c.error, c.Fg2)
+Group.new("healthSuccess", c.green, c.Bg)
+Group.new("healthWarning", c.warning, c.Bg)
+Group.new("TermCursorNC", c.Fg1, c.Bg)
 
 -- LSP Groups (descriptions and ordering from `:h lsp-highlight`)
 Group.new("LspDiagnosticsDefaultError", c.error, c.none) -- used for "Error" diagnostic virtual text
@@ -814,11 +809,11 @@ Group.new("LspDiagnosticsFloatingWarning", c.warning, c.none) -- used for "Warni
 Group.new("LspDiagnosticsVirtualTextWarning", c.warning, c.none) -- Virtual text "Warning"
 Group.new("LspDiagnosticsUnderlineWarning", c.none, c.none, uc, c.warning) -- used to underline "Warning" diagnostics.
 Group.new("LSPDiagnosticsDefaultInformation", c.paleblue, c.none) -- used for "Information" diagnostic virtual text
-Group.new("LspDiagnosticsSignInformation", c.paleblue, c.none)  -- used for "Information" diagnostic signs in sign column
+Group.new("LspDiagnosticsSignInformation", c.paleblue, c.none) -- used for "Information" diagnostic signs in sign column
 Group.new("LspDiagnosticsFloatingInformation", c.paleblue, c.none) -- used for "Information" diagnostic messages in the diagnostics float
 Group.new("LspDiagnosticsVirtualTextInformation", c.paleblue, c.none) -- Virtual text "Information"
 Group.new("LspDiagnosticsUnderlineInformation", c.none, c.none, uc, c.paleblue) -- used to underline "Information" diagnostics.
-Group.new("LspDiagnosticsDefaultHint", c.purple, c.none)  -- used for "Hint" diagnostic virtual text
+Group.new("LspDiagnosticsDefaultHint", c.purple, c.none) -- used for "Hint" diagnostic virtual text
 Group.new("LspDiagnosticsSignHint", c.purple, c.none) -- used for "Hint" diagnostic signs in sign column
 Group.new("LspDiagnosticsFloatingHint", c.purple, c.none) -- used for "Hint" diagnostic messages in the diagnostics float
 Group.new("LspDiagnosticsVirtualTextHint", c.purple, c.none) -- Virtual text "Hint"
@@ -826,7 +821,6 @@ Group.new("LspDiagnosticsUnderlineHint", c.none, c.none, uc, c.purple) -- used t
 Group.new("LspReferenceText", c.accent, c.disabled) -- used for highlighting "text" references
 Group.new("LspReferenceRead", c.accent, c.disabled) -- used for highlighting "read" references
 Group.new("LspReferenceWrite", c.accent, c.disabled) -- used for highlighting "write" references
-
 
 -- Nvim Treesitter Groups (descriptions and ordering from `:h nvim-treesitter-highlights`)
 Group.new("TSError", g.Error, c.none, b) -- For syntax/parser errors
@@ -837,8 +831,8 @@ Group.new("TSConstant", g.Constant, c.none) -- For constants
 Group.new("TSConstBuiltin", c.pink, c.none) -- For constant that are built in the language: `nil` in Lua
 Group.new("TSConstMacro", c.pink, c.none) -- For constants that are defined by macros: `NULL` in C
 Group.new("TSString", g.String, c.none) -- For strings
-Group.new("TSStringRegex",c.red , c.none) -- For regexes
-Group.new("TSStringEscape",c.Fg1, c.none) -- For escape characters within a string
+Group.new("TSStringRegex", c.red, c.none) -- For regexes
+Group.new("TSStringEscape", c.Fg1, c.none) -- For escape characters within a string
 Group.new("TSCharacter", g.Character, c.none) -- For characters
 Group.new("TSNumber", g.Number, c.none) -- For integers
 Group.new("TSBoolean", g.Boolean, c.none) -- For booleans
@@ -849,15 +843,15 @@ Group.new("TSFuncMacro", g.Function, c.none, g.Function) -- For macro defined fu
 Group.new("TSParameter", c.red, c.none, s.none) -- For parameters of a function.
 Group.new("TSParameterReference", c.yellow, c.none) -- For references to parameters of a function.
 Group.new("TSMethod", g.Function, c.none, g.Function) -- For method calls and definitions.
-Group.new("TSField", c.red , c.none  , s.none) -- For fields.
+Group.new("TSField", c.red, c.none, s.none) -- For fields.
 Group.new("TSProperty", c.gray, c.none, s.none) -- Same as `TSField`.
-Group.new("TSConstructor", c.green, c.none)  -- For constructor calls and definitions: `{}` in Lua, and Java constructors
+Group.new("TSConstructor", c.green, c.none) -- For constructor calls and definitions: `{}` in Lua, and Java constructors
 Group.new("TSConditional", g.Conditional, c.none, g.Conditional) -- For keywords related to conditionnals
 Group.new("TSRepeat", g.Repeat, c.none, g.Repeat) -- For keywords related to loops
 Group.new("TSLabel", g.Label, c.none) -- For labels: `label:` in C and `:label:` in Lua
 Group.new("TSOperator", g.Operator, c.none) -- For any operator: `+`, but also `->` and `*` in C
 Group.new("TSKeyword", g.Keyword, c.none) -- For keywords that don't fall in previous categories.
-Group.new("TSKeywordFunction",c.paleblue, c.none, s.none) -- For keywords used to define a fuction.
+Group.new("TSKeywordFunction", c.paleblue, c.none, s.none) -- For keywords used to define a fuction.
 Group.new("TSException", g.Exception, c.none) -- For exception related keywords.
 Group.new("TSType", g.Type, c.none, s.none) -- For types.
 Group.new("TSTypeBuiltin", g.Type, c.none, s.none) -- For builtin types (you guessed it, right ?).
@@ -872,7 +866,7 @@ Group.new("TSInclude", c.cyan, c.none) -- For includes: `#include` in C, `use` o
 -- Group.new("TSLiteral"            , c.blue_alt          , c.none  , b) -- Literal text.
 Group.new("TSURI", c.link, c.none, ul) -- Any URI like a link or email.
 Group.new("TSVariable", c.paleblue, c.none, s.none) -- Variable names
-Group.new("TSVariableBuiltin",c.gray, c.none, s.none) -- Variable names that are defined by the languages, like `this` or `self`.
+Group.new("TSVariableBuiltin", c.gray, c.none, s.none) -- Variable names that are defined by the languages, like `this` or `self`.
 
 -- Functions
 
@@ -884,21 +878,20 @@ else
 end
 
 -- change_style takes a style name as a parameter and switches to that style
- local change_style = function (style)
-     vim.g.material_style = style
-     package.loaded['colorbuddy'] = nil
-     package.loaded['material'] = nil
-     require('colorbuddy').colorscheme('material')
- end
+local change_style = function(style)
+    vim.g.material_style = style
+    package.loaded['colorbuddy'] = nil
+    package.loaded['material'] = nil
+    require('colorbuddy').colorscheme('material')
+end
 
 -- toggle_style takes no parameters toggles the style on every function call
- local toggle_style = function ()
-    local switch = { "darker", "lighter", "palenight", "default", "oceanic", "deep ocean" }
+local toggle_style = function()
+    local switch = {
+        "darker", "lighter", "palenight", "default", "oceanic", "deep ocean"
+    }
     vim.g.style_switch = (vim.g.style_switch + 1) % 7
     change_style(switch[vim.g.style_switch])
- end
+end
 
- return {
-     change_style = change_style,
-     toggle_style = toggle_style
-}
+return {change_style = change_style, toggle_style = toggle_style}
